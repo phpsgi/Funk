@@ -15,14 +15,16 @@
     ],
     "require": {
         "corneltek/universal": "^1.6",
-        "corneltek/codegen": "^2",
-        "corneltek/pux": "2.0.x-dev"
+        "corneltek/codegen": "^2"
     },
     "license": "MIT",
+    "suggest": {
+        "corneltek/pux": "2.0.x-dev"
+    },
     "require-dev": {
+        "corneltek/pux": "2.0.x-dev",
         "willdurand/negotiation": "^1.4",
         "corneltek/phpunit-testmore": "dev-master",
-        "corneltek/lazyrecord": "dev-master",
         "willdurand/geocoder": "^3.1"
     },
     "autoload": {
