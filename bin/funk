@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+require 'vendor/autoload.php';
+
+use Funk\Server\StreamSocketServer;
+
+$server = new StreamSocketServer('tcp://0.0.0.0:3000');
+$server->listen(function($conn) {
+});
+
+
