@@ -5,7 +5,8 @@
     "keywords": [
         "http",
         "middleware",
-        "server"
+        "server",
+        "phpsgi"
     ],
     "authors": [
         {
