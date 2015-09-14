@@ -1,5 +1,6 @@
 <?php
 namespace Funk\Middleware;
+use PHPSGI\Middleware;
 use Negotiation\FormatNegotiator;
 use Negotiation\Negotiator;
 

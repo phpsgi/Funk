@@ -1,6 +1,6 @@
 <?php
 namespace Funk\App;
-use Funk\Middleware\Middleware;
+use PHPSGI\Middleware;
 use Funk\App;
 use Funk\Compositor;
 use Pux\RouteExecutor;

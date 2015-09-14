@@ -1,5 +1,7 @@
 <?php
 namespace Funk\Middleware;
+use PHPSGI\Middleware;
+
 
 class TryCatchMiddleware extends Middleware
 {

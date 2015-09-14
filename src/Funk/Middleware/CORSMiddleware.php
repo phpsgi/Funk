@@ -1,5 +1,6 @@
 <?php
 namespace Funk\Middleware;
+use PHPSGI\Middleware;
 
 class CORSService
 {

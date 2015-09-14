@@ -3,6 +3,8 @@ namespace Funk\Middleware;
 use Geocoder\Geocoder;
 use Geocoder\Provider\FreeGeoIp;
 use Ivory\HttpAdapter\CurlHttpAdapter;
+use PHPSGI\Middleware;
+
 
 class GeocoderMiddleware extends Middleware
 {

@@ -2,6 +2,7 @@
 namespace Funk\Middleware;
 use Negotiation\FormatNegotiator;
 use Negotiation\Negotiator;
+use PHPSGI\Middleware;
 
 class ContentNegotiationMiddleware extends Middleware
 {

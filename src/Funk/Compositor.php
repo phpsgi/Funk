@@ -2,7 +2,7 @@
 namespace Funk;
 use ReflectionClass;
 use Closure;
-use Funk\Middleware\Middleware;
+use PHPSGI\Middleware;
 
 class Compositor
 {
