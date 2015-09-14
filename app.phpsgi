@@ -1,0 +1,4 @@
+<?php
+return function(array & $environment, array $response) {
+    return [ 200, ['Content-Type: plain/text'], 'Hello World'];
+};
