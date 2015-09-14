@@ -1,30 +1,26 @@
 <?php
 namespace Funk\Server;
 use Exception;
+use Funk\Server\BaseServer;
 
-class StreamSocketServer
+class StreamSocketServer extends BaseServer
 {
-    protected $bind;
-
     protected $socket;
 
     protected $connections = [];
 
-    public function __construct($bind)
+    public function listen()
     {
-        $this->bind = $bind;
-        $this->socket = stream_socket_server($this->bind, $errno, $errstr);
+        echo "Starting server at http://{$this->address}:{$this->port}...\n";
+
+        $this->socket = stream_socket_server($this->address . ':' . $this->port, $errNo, $errStr);
         if (!$this->socket) {
-            throw new Exception("Can't connect socket: [$errno] $errstr");
+            throw new Exception("Can't connect socket: [$errNo] $errStr");
         }
         $this->connections[] = $this->socket;
-    }
 
-    public function listen(callable $callback)
-    {
 
         while (1) {
-
             echo "connections:";
             var_dump( $this->connections );
 
@@ -79,22 +75,5 @@ class StreamSocketServer
 
             }
         }
-
-
-        /*
-        while ($conn = stream_socket_accept($this->socket)) {
-            print "accepted " . stream_socket_get_name($conn, true) . "\n";
-
-            $buffer = '';
-            while (!preg_match('/\r?\n\r?\n/', $buffer)) {
-                $buffer .= fread($conn, 2046); 
-            }
-
-            $callback($conn);
-            fwrite($conn, date('c'));
-            fclose($conn);
-        }
-        fclose($this->socket);
-         */
     }
 }

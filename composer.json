@@ -15,7 +15,8 @@
     ],
     "require": {
         "corneltek/universal": "^1.6",
-        "corneltek/codegen": "^2"
+        "corneltek/codegen": "^2",
+        "corneltek/cliframework": "^2"
     },
     "license": "MIT",
     "suggest": {
