@@ -5,28 +5,9 @@ require 'vendor/autoload.php';
 use CLIFramework\Logger;
 use Funk\Server\StreamSocketServer;
 use Funk\Server\EventHttpServer;
+use Funk\Console;
 
-$script = array_shift($argv);
-$appFile = array_shift($argv);
 
-$logger = new Logger;
-
-if ($appFile) { 
-    $app = require $appFile;
-} else {
-    $app = function(array & $environment, array $response) {
-        return [ 200, [ 'Content-Type' => 'text/plain' ], 'Hello World' ];
-    };
-}
-
-if (extension_loaded('event')) {
-
-    $logger->info("Found 'event' extension, enabling EventHttpServer server.");
-    $server = new EventHttpServer($app);
-
-} else {
-
-    $logger->info("Falling back to StreamSocketServer server.");
-    $server = new StreamSocketServer($app);
-}
-$server->listen();
+$console = new Console;
+$ret = $console->runWithTry($argv);
+exit($ret);
