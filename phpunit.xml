@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php"
+         backupGlobals="true"
+         colors="true"
+         verbose="true">
+  <php>
+    <env name="XHPROF_ROOT" value="/Users/c9s/src/php/xhprof"/>
+  </php>
+  <testsuites>
+
+    <testsuite name="All">
+       <directory suffix="Test.php">tests/Funk</directory>
+    </testsuite>
+
+    <testsuite name="Middleware">
+       <directory suffix="Test.php">tests/Middleware</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
