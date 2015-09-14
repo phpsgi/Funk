@@ -12,6 +12,7 @@ class MuxAppTest extends PHPUnit_Framework_TestCase
         ]);
         $this->assertNotNull($app);
         $this->assertInstanceOf('Funk\App\MuxApp',$app);
+        $this->assertInstanceOf('PHPSGI\App',$app, 'Must be an instanceof PHPSGI App');
     }
 
 
