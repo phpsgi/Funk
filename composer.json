@@ -17,6 +17,7 @@
     "require": {
         "corneltek/universal": "^1.6",
         "corneltek/codegen": "^2",
+        "phpsgi/phpsgi": "@dev",
         "corneltek/cliframework": "^2"
     },
     "license": "MIT",
