@@ -1,8 +1,30 @@
 # Funk
 
-Funk is a HTTP server implementation of PHPSGI.
+Funk is an implementation of PHPSGI. It supports HTTP servers implemented with PHP SAPI (Apache2 `mod_php`, `php-fpm`, `fastcgi`), therefore you can integrate your application with Funk and switch to different HTTP server implementation.
 
-- Funk supports php-fpm, apache2 php handler servers.
+## Components
+
+- HTTP server (with event extension or `socket_select`)
+- SAPI support (php-fpm, apache2 php handler servers)
+- Middlewares
+- Middleware Compositor
+- A Simple Mux Builder (integrated with Pux)
+
+
+## Application
+
+```php
+$app = function(array & $environment, array $response) {
+    return [ 200, [ 'Content-Type' => 'text/plain' ], 'Hello World' ];
+};
+```
+
+## Environment
+
+```php
+// This creates $env array from $_SERVER, $_REQUEST, $_POST, $_GET ... 
+$env = Environment::createFromGlobals();
+```
 
 
 ## Middleware
