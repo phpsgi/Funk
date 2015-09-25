@@ -11,7 +11,7 @@ Funk is an implementation of PHPSGI. It supports HTTP servers implemented with P
 - A Simple Mux Builder (integrated with Pux)
 
 
-## Application
+### Application
 
 ```php
 $app = function(array & $environment, array $response) {
@@ -19,7 +19,7 @@ $app = function(array & $environment, array $response) {
 };
 ```
 
-## Environment
+### Environment
 
 ```php
 // This creates $env array from $_SERVER, $_REQUEST, $_POST, $_GET ... 
@@ -27,7 +27,7 @@ $env = Environment::createFromGlobals();
 ```
 
 
-## Middleware
+### Middleware
 
 ```php
 use Funk\Environment;
