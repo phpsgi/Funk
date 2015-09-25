@@ -11,6 +11,13 @@ Funk is an implementation of PHPSGI. It supports HTTP servers implemented with P
 - A Simple Mux Builder (integrated with Pux)
 
 
+### Environment
+
+```php
+// This creates $env array from $_SERVER, $_REQUEST, $_POST, $_GET ... 
+$env = Environment::createFromGlobals();
+```
+
 ### Application
 
 ```php
@@ -19,12 +26,30 @@ $app = function(array & $environment, array $response) {
 };
 ```
 
-### Environment
+
+### Responder
+
+#### SAPIResponder
 
 ```php
-// This creates $env array from $_SERVER, $_REQUEST, $_POST, $_GET ... 
-$env = Environment::createFromGlobals();
+$fd = fopen('php://output', 'w');
+$responder = new SAPIResponder($fd);
+$responder->respond([ 200, [ 'Content-Type: text/plain' ], 'Hello World' ]);
+fclose($fd);
 ```
+
+
+```php
+$env = Environment::createFromGlobals();
+$app = function(array & $environment, array $response) {
+    return [ 200, [ 'Content-Type' => 'text/plain' ], 'Hello World' ];
+};
+$fd = fopen('php://output', 'w');
+$responder = new SAPIResponder($fd);
+$responder->respond($app($env, []));
+fclose($fd);
+```
+
 
 
 ### Middleware
@@ -51,6 +76,8 @@ $middleware = new TryCatchMiddleware($app);
 $env = Environment::createFromGlobals();
 $response = $middleware($env, [200, [], []]);
 ```
+
+
 
 ## Contributing
 
