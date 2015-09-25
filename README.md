@@ -2,6 +2,8 @@
 
 Funk is a HTTP server implementation of PHPSGI.
 
+- Funk supports php-fpm, apache2 php handler servers.
+
 
 ## Middleware
 
