@@ -29,13 +29,13 @@ $env = Environment::createFromGlobals();
 
 ### Middleware
 
-- Funk\Middleware\ContentNegotiationMiddleware
-- Funk\Middleware\CORSMiddleware
-- Funk\Middleware\GeocoderMiddleware
-- Funk\Middleware\HeadMiddleware
-- Funk\Middleware\TryCatchMiddleware
-- Funk\Middleware\XHProfMiddleware
-- Funk\Middleware\XHTTPMiddleware
+- `Funk\Middleware\ContentNegotiationMiddleware`
+- `Funk\Middleware\CORSMiddleware`
+- `Funk\Middleware\GeocoderMiddleware`
+- `Funk\Middleware\HeadMiddleware`
+- `Funk\Middleware\TryCatchMiddleware`
+- `Funk\Middleware\XHProfMiddleware`
+- `Funk\Middleware\XHTTPMiddleware`
 
 
 ```php
