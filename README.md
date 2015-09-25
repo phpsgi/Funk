@@ -31,7 +31,11 @@ $app = function(array & $environment, array $response) {
 
 #### SAPIResponder
 
+You can integrate your application with SAPIResponder to support Apache2 php handler / php-fpm / fastcgi.
+
 ```php
+use Funk\Responder\SAPIResponder;
+
 $fd = fopen('php://output', 'w');
 $responder = new SAPIResponder($fd);
 $responder->respond([ 200, [ 'Content-Type: text/plain' ], 'Hello World' ]);
@@ -40,6 +44,8 @@ fclose($fd);
 
 
 ```php
+use Funk\Responder\SAPIResponder;
+
 $env = Environment::createFromGlobals();
 $app = function(array & $environment, array $response) {
     return [ 200, [ 'Content-Type' => 'text/plain' ], 'Hello World' ];
