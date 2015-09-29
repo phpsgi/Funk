@@ -41,8 +41,14 @@ class Environment
         $env['query_parameters'] = $env['_GET']     = $GLOBALS['_GET'];
         $env['phpsgi.input'] = new SAPIInputBuffer;
 
-        $env['_COOKIE']  = $GLOBALS['_COOKIE'];
-        $env['_SESSION'] = $GLOBALS['_SESSION'];
+        if (isset($GLOBALS['_COOKIE'])) {
+            $env['_COOKIE']  = $GLOBALS['_COOKIE'];
+        }
+
+        // When session is not started, we don't have _SESSION in globals
+        if (isset($GLOBALS['_SESSION'])) {
+            $env['_SESSION'] = $GLOBALS['_SESSION'];
+        }
         return $env;
     }
 }
