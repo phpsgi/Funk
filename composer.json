@@ -17,8 +17,7 @@
     "require": {
         "corneltek/universal": "^1.6",
         "corneltek/codegen": "^2",
-        "phpsgi/phpsgi": "@dev",
-        "corneltek/cliframework": "^2"
+        "phpsgi/phpsgi": "@dev"
     },
     "license": "MIT",
     "suggest": {
@@ -26,6 +25,7 @@
     },
     "require-dev": {
         "corneltek/pux": "2.0.x-dev",
+        "corneltek/cliframework": "^2",
         "willdurand/negotiation": "^1.4",
         "corneltek/phpunit-testmore": "dev-master",
         "willdurand/geocoder": "^3.1"
@@ -34,5 +34,6 @@
         "psr-4": {
             "Funk\\": "src/Funk/"
         }
-    }
+    },
+    "extra": { "branch-alias": { "dev-master": "1.0.x-dev" } }
 }
