@@ -56,7 +56,12 @@ class SAPIResponder
                     @header($k . ':' . $header);
                 }
             }
-            fwrite($this->resource, $body);
+
+            if (is_array($body)) {
+                fwrite($this->resource, join("",$body));
+            } else {
+                fwrite($this->resource, $body);
+            }
         } else {
             // FIXME
             // throw new LogicException("Unsupported response value type.");
