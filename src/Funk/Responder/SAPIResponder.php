@@ -58,7 +58,8 @@ class SAPIResponder
             }
             fwrite($this->resource, $body);
         } else {
-            throw new LogicException("Unsupported response value type.");
+            // FIXME
+            // throw new LogicException("Unsupported response value type.");
         }
     }
 }
