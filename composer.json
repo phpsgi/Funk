@@ -24,7 +24,7 @@
     },
     "require-dev": {
         "corneltek/pux": "2.0.x-dev",
-        "corneltek/cliframework": "^2",
+        "corneltek/cliframework": "^3.0",
         "willdurand/negotiation": "^1.4",
         "corneltek/phpunit-testmore": "dev-master",
         "willdurand/geocoder": "^3.1"
