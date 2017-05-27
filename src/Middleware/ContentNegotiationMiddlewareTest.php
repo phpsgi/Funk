@@ -1,9 +1,12 @@
 <?php
+
+namespace Funk\Middleware;
+
 use Funk\Middleware\ContentNegotiationMiddleware;
 use Funk\Testing\Utils;
 use Negotiation\Negotiator;
 
-class ContentNegotiationMiddlewareTest extends PHPUnit_Framework_TestCase
+class ContentNegotiationMiddlewareTest extends \PHPUnit\Framework\TestCase
 {
     public function testContentNegotiationMiddleware()
     {

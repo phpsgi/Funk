@@ -1,6 +1,6 @@
 {
     "name": "phpsgi/funk",
-    "description": "",
+    "description": "An implementation of PHPSGI middleware specification",
     "homepage": "https://github.com/phpsgi/Funk",
     "keywords": [
         "http",
@@ -26,13 +26,10 @@
         "corneltek/pux": "2.0.x-dev",
         "corneltek/cliframework": "^3.0",
         "willdurand/negotiation": "^1.4",
-        "corneltek/phpunit-testmore": "dev-master",
         "willdurand/geocoder": "^3.1"
     },
     "autoload": {
-        "psr-4": {
-            "Funk\\": "src/Funk/"
-        }
+        "psr-4": { "Funk\\": "src/" }
     },
     "extra": { "branch-alias": { "dev-master": "1.0.x-dev" } }
 }

@@ -6,7 +6,7 @@ use Funk\Compositor;
 use Funk\Middleware\TryCatchMiddleware;
 
 
-class MiddlewareTest extends PHPUnit_Framework_TestCase
+class MiddlewareTest extends \PHPUnit\Framework\TestCase
 {
 
 

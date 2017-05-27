@@ -1,10 +1,14 @@
 <?php
+
+namespace Funk;
+
 use Funk\Compositor;
 use Funk\Testing\Utils;
 use Funk\App\MuxApp;
+
 use Pux\RouteRequest;
 
-class CompositorTest extends PHPUnit_Framework_TestCase
+class CompositorTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCompositorInvoke()

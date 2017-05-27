@@ -2,7 +2,7 @@
 use Funk\Middleware\XHProfMiddleware;
 use Funk\Testing\Utils;
 
-class XHProfMiddlewareTest extends PHPUnit_Framework_TestCase
+class XHProfMiddlewareTest extends \PHPUnit\Framework\TestCase
 {
     public function testXHProfMiddleware()
     {

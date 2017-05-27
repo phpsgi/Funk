@@ -1,5 +1,7 @@
 <?php
-use Funk\Middleware\GeocoderMiddleware;
+
+namespace Funk\Middleware;
+
 use Funk\Testing\Utils;
 use Geocoder\Geocoder;
 use Geocoder\Provider\FreeGeoIp;
@@ -8,7 +10,7 @@ use Ivory\HttpAdapter\CurlHttpAdapter;
 use Ivory\HttpAdapter\FileGetContentsHttpAdapter;
 
 
-class GeocoderMiddlewareTest extends PHPUnit_Framework_TestCase
+class GeocoderMiddlewareTest extends \PHPUnit\Framework\TestCase
 {
     public function testGeocoderMiddleware()
     {

@@ -1,8 +1,14 @@
 <?php
+
+namespace Funk\App;
+
 use Funk\Compositor;
 use Funk\App\MuxApp;
+use PHPUnit\Framework\TestCase;
 
-class MuxAppTest extends PHPUnit_Framework_TestCase
+use PHPSGI\App;
+
+class MuxAppTest extends TestCase
 {
     public function testMuxApp()
     {
@@ -11,12 +17,7 @@ class MuxAppTest extends PHPUnit_Framework_TestCase
             "/bar" => ['ProductController', 'barAction'],
         ]);
         $this->assertNotNull($app);
-        $this->assertInstanceOf('Funk\App\MuxApp',$app);
-        $this->assertInstanceOf('PHPSGI\App',$app, 'Must be an instanceof PHPSGI App');
+        $this->assertInstanceOf(MuxApp::class,$app);
+        $this->assertInstanceOf(App::class, $app, 'Must be an instanceof PHPSGI App');
     }
-
-
-
-
 }
-

@@ -1,7 +1,10 @@
 <?php
+
+namespace Funk\Responder;
+
 use Funk\Responder\SAPIResponder;
 
-class SAPIResponderTest extends PHPUnit_Framework_TestCase
+class SAPIResponderTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testStringResponse()
