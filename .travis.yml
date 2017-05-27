@@ -1,0 +1,26 @@
+language: php
+php:
+- '7.0'
+- '7.1'
+- hhvm
+matrix:
+  fast_finish: true
+  allow_failures:
+  - php: hhvm
+install:
+- composer install
+- composer require "satooshi/php-coveralls" "^1" --dev --no-update
+script:
+- phpunit -c phpunit.xml.dist
+after_success:
+- php vendor/bin/coveralls -v
+cache:
+  apt: true
+  directories:
+  - vendor
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+  slack:
+    secure: z/QbNbfOj8oHvJWjviKe3oU/g2DDqvqHv/Fb8ONIJuqJt0fv/mmy8+QWWFp2mXrF+c6Ncn9W77spLWMCDlAdXNvm9Sf61KVVO0PlFuA48V3AnfbyCF/1txZ1OpxKkVCzzOsmq6yVef2eHgXtZFdk+uGaLs4R1AaL33urOrFZT4zXF8wE2rKd4davdtimP30++hJEO3JUrInQkv0AmrC/A66y1G/hPLpVu3Xf+sYDvgnGoXsTKBcrvcWQeB7684hKHAPLwHLiLe1Tnbsn6h8zdF+HZuTLfNTE/FsesTnZ5zGvDc3wSFBBd3Fu6xceUhQdRoTPfan8o5JlYAIqKRgsPLvpv9xK0AdWTxy7RRDKuwhsNHvOtwBK14HE+XHUv7lL6CYiQi9NN/UOA89Tqox9wEruEY8ab15JtW+2d5lN6ZKkloTFujoVazxedpjX2IC5ahzKfGjxrChUHJRP9QJcRWFVbh3gWux+VYVSBZaJZ91ACK0pPvvR0xd2a7zlKT/X4cUfPv5BLRB4t1NVFW3lnxuMhdXmdPh5mOuxpbBaudA7wrYqiyXv6ZGD7AyRnvejC8afx+Yzu411Zy2iXh9MP0X+ZReryvdfhEB6jk/YQRs3Cn7ouvSQQu0LTDfTX9oorfYJHkQkaB0PJJku3Srm08Oi1k/vxviN86sJyNxRjrA=
