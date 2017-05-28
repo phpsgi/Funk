@@ -13,6 +13,10 @@
 
 Funk is an implementation of PHPSGI. It supports HTTP servers implemented with PHP SAPI (Apache2 `mod_php`, `php-fpm`, `fastcgi`), therefore you can integrate your application with Funk and switch to different HTTP server implementation.
 
+PHPSGI and Funk aims to provide lightweight HTTP interfaces, middlewares for
+web frameworks.  It's a bit different from the PSR-7 spec. PHPSGI focuses on the core data structure instead of 
+forcing components to implement the interface requirements.
+
 ## Components
 
 - HTTP server (with event extension or `socket_select`)
