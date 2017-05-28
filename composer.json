@@ -24,7 +24,6 @@
     },
     "require-dev": {
         "corneltek/pux": "2.0.x-dev",
-        "corneltek/cliframework": "^3.0",
         "willdurand/negotiation": "^1.4",
         "willdurand/geocoder": "^3.1"
     },
