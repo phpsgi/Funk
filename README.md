@@ -1,7 +1,8 @@
 # Funk
 
-[![Build Status](https://travis-ci.org/phpsgi/funk.svg?branch=master)](https://travis-ci.org/phpsgi/funk)
-[![Coverage Status](https://img.shields.io/coveralls/phpsgi/funk.svg)](https://coveralls.io/r/phpsgi/funk)
+[![Build Status](https://travis-ci.org/phpsgi/funk.svg?branch=master)](https://travis-ci.org/phpsgi/Funk)
+[![Coverage Status](https://img.shields.io/coveralls/phpsgi/funk.svg)](https://coveralls.io/r/phpsgi/Funk)
+
 [![Latest Stable Version](https://poser.pugx.org/phpsgi/funk/v/stable.svg)](https://packagist.org/packages/phpsgi/funk) 
 [![Total Downloads](https://poser.pugx.org/phpsgi/funk/downloads.svg)](https://packagist.org/packages/phpsgi/funk) 
 [![Monthly Downloads](https://poser.pugx.org/phpsgi/funk/d/monthly)](https://packagist.org/packages/phpsgi/funk)
