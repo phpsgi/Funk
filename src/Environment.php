@@ -39,7 +39,7 @@ class Environment extends ArrayObject
      */
     public static function createFromArray(array $array)
     {
-        $env = $array['_SERVER'];
+        $env = new self($array['_SERVER']);
         $env['parameters'] = $env['_REQUEST'] = $array['_REQUEST'];
         $env['body_parameters'] = $env['_POST']    = $array['_POST'];
         $env['query_parameters'] = $env['_GET']     = $array['_GET'];
@@ -56,7 +56,7 @@ class Environment extends ArrayObject
      */
     public static function createFromGlobals()
     {
-        $env = $GLOBALS['_SERVER'];
+        $env = new self($GLOBALS['_SERVER']);
         if (isset($GLOBALS['_REQUEST'])) {
             $env['parameters'] = $env['_REQUEST'] = $GLOBALS['_REQUEST'];
         }
