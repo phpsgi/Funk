@@ -20,7 +20,8 @@
     },
     "license": "MIT",
     "suggest": {
-        "corneltek/pux": "2.0.x-dev"
+        "corneltek/pux": "2.0.x-dev",
+        "corneltek/cliframework": "4.0.x-dev"
     },
     "require-dev": {
         "corneltek/pux": "2.0.x-dev",
