@@ -10,7 +10,6 @@
 [![Latest Unstable Version](https://poser.pugx.org/phpsgi/funk/v/unstable.svg)](https://packagist.org/packages/phpsgi/funk) 
 [![License](https://poser.pugx.org/phpsgi/funk/license.svg)](https://packagist.org/packages/phpsgi/funk)
 [![Join the chat at https://gitter.im/phpsgi/funk](https://badges.gitter.im/phpsgi/funk.svg)](https://gitter.im/phpsgi/funk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Works On My Machine](https://cdn.rawgit.com/nikku/works-on-my-machine/v0.2.0/badge.svg)](https://github.com/nikku/works-on-my-machine)
 [![Made in Taiwan](https://img.shields.io/badge/made%20in-taiwan-green.svg)](README.md)
 
 Funk is an implementation of PHPSGI. It supports HTTP servers implemented with PHP SAPI (Apache2 `mod_php`, `php-fpm`, `fastcgi`), therefore you can integrate your application with Funk and switch to different HTTP server implementation.
