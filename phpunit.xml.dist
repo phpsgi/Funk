@@ -12,6 +12,15 @@
     </testsuite>
   </testsuites>
 
+  <filter>
+    <whitelist>
+      <directory suffix=".php">src</directory>
+      <exclude>
+        <directory suffix="Test.php">src</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+
   <logging>
     <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
     <log type="coverage-html" 
