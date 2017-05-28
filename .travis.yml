@@ -8,8 +8,8 @@ matrix:
   allow_failures:
   - php: hhvm
 install:
-- composer install
 - composer require "satooshi/php-coveralls" "^1" --dev --no-update
+- composer install
 script:
 - phpunit -c phpunit.xml.dist
 after_success:
