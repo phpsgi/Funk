@@ -1,14 +1,14 @@
 # Funk
 
-[![Build Status](https://travis-ci.org/phpsig/funk.svg?branch=master)](https://travis-ci.org/phpsig/funk)
-[![Coverage Status](https://img.shields.io/coveralls/phpsig/funk.svg)](https://coveralls.io/r/phpsig/funk)
-[![Latest Stable Version](https://poser.pugx.org/phpsig/funk/v/stable.svg)](https://packagist.org/packages/phpsig/funk) 
-[![Total Downloads](https://poser.pugx.org/phpsig/funk/downloads.svg)](https://packagist.org/packages/phpsig/funk) 
-[![Monthly Downloads](https://poser.pugx.org/phpsig/funk/d/monthly)](https://packagist.org/packages/phpsig/funk)
-[![Daily Downloads](https://poser.pugx.org/phpsig/funk/d/daily)](https://packagist.org/packages/phpsig/funk)
-[![Latest Unstable Version](https://poser.pugx.org/phpsig/funk/v/unstable.svg)](https://packagist.org/packages/phpsig/funk) 
-[![License](https://poser.pugx.org/phpsig/funk/license.svg)](https://packagist.org/packages/phpsig/funk)
-[![Join the chat at https://gitter.im/phpsig/funk](https://badges.gitter.im/phpsig/funk.svg)](https://gitter.im/phpsig/funk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/phpsgi/funk.svg?branch=master)](https://travis-ci.org/phpsgi/funk)
+[![Coverage Status](https://img.shields.io/coveralls/phpsgi/funk.svg)](https://coveralls.io/r/phpsgi/funk)
+[![Latest Stable Version](https://poser.pugx.org/phpsgi/funk/v/stable.svg)](https://packagist.org/packages/phpsgi/funk) 
+[![Total Downloads](https://poser.pugx.org/phpsgi/funk/downloads.svg)](https://packagist.org/packages/phpsgi/funk) 
+[![Monthly Downloads](https://poser.pugx.org/phpsgi/funk/d/monthly)](https://packagist.org/packages/phpsgi/funk)
+[![Daily Downloads](https://poser.pugx.org/phpsgi/funk/d/daily)](https://packagist.org/packages/phpsgi/funk)
+[![Latest Unstable Version](https://poser.pugx.org/phpsgi/funk/v/unstable.svg)](https://packagist.org/packages/phpsgi/funk) 
+[![License](https://poser.pugx.org/phpsgi/funk/license.svg)](https://packagist.org/packages/phpsgi/funk)
+[![Join the chat at https://gitter.im/phpsgi/funk](https://badges.gitter.im/phpsgi/funk.svg)](https://gitter.im/phpsgi/funk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Works On My Machine](https://cdn.rawgit.com/nikku/works-on-my-machine/v0.2.0/badge.svg)](https://github.com/nikku/works-on-my-machine)
 [![Made in Taiwan](https://img.shields.io/badge/made%20in-taiwan-green.svg)](README.md)
 
