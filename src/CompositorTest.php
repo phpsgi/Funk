@@ -7,6 +7,7 @@ use Funk\Testing\Utils;
 use Funk\App\MuxApp;
 
 use Pux\RouteRequest;
+use Funk\Middleware\TryCatchMiddleware;
 
 class CompositorTest extends \PHPUnit\Framework\TestCase
 {
@@ -14,7 +15,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
     public function testCompositorInvoke()
     {
         $compositor = new Compositor;
-        $compositor->enable('Funk\\Middleware\\TryCatchMiddleware', [ 'throw' => true ]);
+        $compositor->enable(TryCatchMiddleware::class, [ 'throw' => true ]);
         $compositor->enable(function($app) {
             return function(array & $environment, array $response) use ($app) { 
                 $environment['middleware.app'] = true;
@@ -75,7 +76,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
     public function testCompositor()
     {
         $compositor = new Compositor;
-        $compositor->enable('Funk\\Middleware\\TryCatchMiddleware', [ 'throw' => true ]);
+        $compositor->enable(TryCatchMiddleware::class, [ 'throw' => true ]);
         $compositor->enable(function($app) {
             return function(array & $environment, array $response) use ($app) { 
                 $environment['middleware.app'] = true;

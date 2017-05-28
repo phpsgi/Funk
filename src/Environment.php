@@ -1,14 +1,35 @@
 <?php
+
 namespace Funk;
+
 use Funk\Buffer\SAPIInputBuffer;
+use ArrayObject;
 
 /**
  * Environment array factory method
  *
  *    Environment::createFromGlobals($GLOBALS);
  */
-class Environment
+class Environment extends ArrayObject
 {
+    /**
+     * The $_REQUEST parameters
+     */
+    public $parameters;
+
+    /**
+     * The $_POST parameters
+     */
+    public $bodyParameters;
+
+    /**
+     * The $_GET parameters
+     */
+    public $queryParameters;
+
+    public $cookies;
+
+    public $session;
 
     /**
      * Create from globals array
@@ -16,7 +37,7 @@ class Environment
      * @param array $array
      * @return array
      */
-    static public function createFromArray(array $array)
+    public static function createFromArray(array $array)
     {
         $env = $array['_SERVER'];
         $env['parameters'] = $env['_REQUEST'] = $array['_REQUEST'];
@@ -33,12 +54,18 @@ class Environment
      *
      * @return array
      */
-    static public function createFromGlobals()
+    public static function createFromGlobals()
     {
         $env = $GLOBALS['_SERVER'];
-        $env['parameters'] = $env['_REQUEST'] = $GLOBALS['_REQUEST'];
-        $env['body_parameters'] = $env['_POST']    = $GLOBALS['_POST'];
-        $env['query_parameters'] = $env['_GET']     = $GLOBALS['_GET'];
+        if (isset($GLOBALS['_REQUEST'])) {
+            $env['parameters'] = $env['_REQUEST'] = $GLOBALS['_REQUEST'];
+        }
+        if (isset($GLOBALS['_POST'])) {
+            $env['body_parameters'] = $env['_POST']    = $GLOBALS['_POST'];
+        }
+        if (isset($GLOBALS['_GET'])) {
+            $env['query_parameters'] = $env['_GET']     = $GLOBALS['_GET'];
+        }
         $env['phpsgi.input'] = new SAPIInputBuffer;
 
         if (isset($GLOBALS['_COOKIE'])) {

@@ -4,11 +4,11 @@ use Funk\Testing\Utils;
 
 class XHProfMiddlewareTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @requires extension xhprof
+     */
     public function testXHProfMiddleware()
     {
-        if (!extension_loaded('xhprof')) {
-            return $this->markTestSkipped('xhprof extension required.');
-        }
         $xhprofRoot = getenv('XHPROF_ROOT');
 
         if (!$xhprofRoot) {
@@ -32,7 +32,6 @@ class XHProfMiddlewareTest extends \PHPUnit\Framework\TestCase
         ]);
         $response = $m($env, []);
         $this->assertNotEmpty($response);
-        
     }
 }
 
