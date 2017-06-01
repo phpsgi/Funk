@@ -2,7 +2,7 @@
 
 namespace Funk\Middleware;
 
-use Funk\Testing\Utils;
+use Funk\Testing\TestUtils;
 use Geocoder\Geocoder;
 use Geocoder\Provider\FreeGeoIp;
 use Geocoder\Provider\GeoIP;
@@ -28,7 +28,7 @@ class GeocoderMiddlewareTest extends \PHPUnit\Framework\TestCase
             $adapter = new FileGetContentsHttpAdapter();
             $geocoder = new FreeGeoIp($adapter);
             $middleware = new GeocoderMiddleware($app, $geocoder);
-            $env = Utils::createEnv('GET', '/');
+            $env = TestUtils::createEnv('GET', '/');
             $env['REMOTE_ADDR'] = '173.194.72.113';
             $middleware($env, []);
 

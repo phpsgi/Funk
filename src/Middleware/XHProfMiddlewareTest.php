@@ -1,6 +1,6 @@
 <?php
 use Funk\Middleware\XHProfMiddleware;
-use Funk\Testing\Utils;
+use Funk\Testing\TestUtils;
 
 class XHProfMiddlewareTest extends \PHPUnit\Framework\TestCase
 {
@@ -24,7 +24,7 @@ class XHProfMiddlewareTest extends \PHPUnit\Framework\TestCase
             return [200, [], ['Hell Yeah']];
         };
 
-        $env = Utils::createEnv('GET', '/');
+        $env = TestUtils::createEnv('GET', '/');
         $m = new XHProfMiddleware($app, [ 
             'flags' => XHPROF_FLAGS_NO_BUILTINS | XHPROF_FLAGS_CPU | XHPROF_FLAGS_MEMORY,
             'root' => getenv('XHPROF_ROOT'),

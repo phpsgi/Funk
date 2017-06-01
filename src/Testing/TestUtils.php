@@ -1,7 +1,7 @@
 <?php
 namespace Funk\Testing;
 
-class Utils
+class TestUtils
 {
 
     static public function createEnv($method, $pathInfo)

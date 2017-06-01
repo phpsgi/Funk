@@ -3,7 +3,7 @@
 namespace Funk\Middleware;
 
 use Funk\Middleware\ContentNegotiationMiddleware;
-use Funk\Testing\Utils;
+use Funk\Testing\TestUtils;
 use Negotiation\Negotiator;
 
 class ContentNegotiationMiddlewareTest extends \PHPUnit\Framework\TestCase
@@ -15,7 +15,7 @@ class ContentNegotiationMiddlewareTest extends \PHPUnit\Framework\TestCase
             $testing->assertEquals('text/html', $environment['request.best_format']->getValue());
         };
 
-        $env = Utils::createEnv('GET', '/');
+        $env = TestUtils::createEnv('GET', '/');
         $env['HTTP_ACCEPT'] = 'text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8';
         $env['negotiation.priorities'] = array('text/html', 'application/json');
         $m = new ContentNegotiationMiddleware($app, new Negotiator);

@@ -1,7 +1,7 @@
 <?php
 use PHPSGI\Middleware;
 use Pux\RouteRequest;
-use Funk\Testing\Utils;
+use Funk\Testing\TestUtils;
 use Funk\Compositor;
 use Funk\Middleware\TryCatchMiddleware;
 
@@ -21,7 +21,7 @@ class MiddlewareTest extends \PHPUnit\Framework\TestCase
         $middleware2 = new TryCatchMiddleware($middleware);
 
         // $request = RouteRequest::create('GET', '/path');
-        $env = Utils::createGlobals('GET', '/foo');
+        $env = TestUtils::createGlobals('GET', '/foo');
         $response = $middleware2($env, [200, [], []]);
         $this->assertNotEmpty($response);
     }

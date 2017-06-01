@@ -3,7 +3,7 @@
 namespace Funk;
 
 use Funk\Compositor;
-use Funk\Testing\Utils;
+use Funk\Testing\TestUtils;
 use Funk\App\MuxApp;
 
 use Pux\RouteRequest;
@@ -33,7 +33,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
             return $response;
         });
 
-        $env = Utils::createEnv('GET', '/foo/bar');
+        $env = TestUtils::createEnv('GET', '/foo/bar');
         $response = $compositor($env, []);
         $this->assertNotEmpty($response);
     }
@@ -49,7 +49,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
         ]));
         $app = $appcomp->wrap();
 
-        $env = Utils::createEnv('GET', '/hack/foo');
+        $env = TestUtils::createEnv('GET', '/hack/foo');
         $response = $app($env, []);
         $this->assertNotEmpty($response);
         $this->assertEquals('foo',$response);
@@ -65,7 +65,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
         $app = $compositor->wrap();
         $this->assertInstanceOf('Funk\\App\\MuxApp', $app,
             'When there is only one app and no middleware, the returned type should be just MuxApp');
-        $env = Utils::createEnv('GET', '/foo');
+        $env = TestUtils::createEnv('GET', '/foo');
         $response = $app($env, []);
         $this->assertNotEmpty($response);
         $this->assertEquals('foo',$response);
@@ -101,7 +101,7 @@ class CompositorTest extends \PHPUnit\Framework\TestCase
         });
         $app = $compositor->wrap();
 
-        $env = Utils::createEnv('GET', '/foo');
+        $env = TestUtils::createEnv('GET', '/foo');
         $res = [  ];
         $res = $app($env, $res);
         $this->assertNotEmpty($res);
