@@ -4,7 +4,7 @@ use ReflectionClass;
 use Closure;
 use PHPSGI\Middleware;
 
-class Compositor
+class Compositor implements \PHPSGI\App
 {
 
     /**
@@ -25,7 +25,7 @@ class Compositor
      */
     private $wrappedApp;
 
-    public function __construct(callable $app = null)
+    public function __construct($app = null)
     {
         $this->app = $app;
     }
@@ -42,7 +42,7 @@ class Compositor
         return $this;
     }
 
-    public function app(callable $app)
+    public function app($app)
     {
         $this->app = $app;
         return $this;
@@ -55,9 +55,8 @@ class Compositor
         for ($i = count($this->stacks) - 1; $i > 0; $i--) {
             $stack = $this->stacks[$i];
 
-
             // middleware closure
-            if ($stack instanceof Closure) {
+            if (is_callable($stack)) {
                 $app = $stack($app);
             } else {
                 list($appClass, $args) = $stack;
@@ -65,13 +64,12 @@ class Compositor
                 array_unshift($args, $app);
                 $app = $refClass->newInstanceArgs($args);
             }
-
         }
+
         return $app;
     }
 
-
-    public function __invoke(array $environment, array $response)
+    public function call(array & $environment, array $response)
     {
         if ($app = $this->wrappedApp) {
             return $app($environment, $response);
@@ -80,7 +78,8 @@ class Compositor
         return $app($environment, $response);
     }
 
+    public function __invoke(array & $environment, array $response)
+    {
+        return $this->call($environment, $response);
+    }
 }
-
-
-
